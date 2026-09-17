@@ -1,0 +1,159 @@
+@import "mocha.css";
+
+* {
+  /* Use a font that contains the icon glyphs used in the config.
+   * We try several common Nerd Fonts and Font Awesome as fallbacks
+   * so icons still s'affichent même si un des paquets manque. */
+  font-family: "FantasqueSansMono Nerd Font",
+               "Fantasque Sans Mono Nerd Font",
+               "Symbols Nerd Font",
+               "JetBrainsMono Nerd Font",
+               "Font Awesome 6 Free",
+               "Font Awesome 6 Brands",
+               "Font Awesome 5 Free",
+               "Font Awesome 5 Brands",
+               "Noto Sans Symbols2";
+  font-size: 17px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @sky;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 1rem;
+}
+
+#custom-music,
+#clock,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.25rem 0.5rem;
+  margin: 5px 0;
+}
+
+/* Hardware group */
+#cpu, 
+#memory {
+  background-color: @surface0;
+  padding: 0.25rem 0.5rem;
+  margin: 5px 0;
+}
+
+#cpu {
+  color: @mauve;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#memory {
+  color: @mauve;
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+/* Network group */
+#bluetooth,
+#network {
+  background-color: @surface0;
+  padding: 0.25rem 0.5rem;
+  margin: 5px 0;
+}
+
+#bluetooth {
+  color: @blue;
+  border-radius: 1rem 0px 0px 1rem;
+}
+
+#network {
+  color: @sapphire;
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+/* Backlight/Sound/Battery group */
+#backlight,
+#wireplumber,
+#battery {
+  background-color: @surface0;
+  padding: 0.25rem 0.5rem;
+  margin: 5px 0;
+}
+
+#backlight {
+  color: @yellow;
+  border-radius: 1rem 0px 0px 1rem;
+}
+
+#wireplumber {
+  color: @maroon;
+  border-radius: 0;
+}
+
+#battery {
+  color: @green;
+  border-radius: 0px 1rem 1rem 0px;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+/* Date/lock/power group */
+#clock {
+  color: @blue;
+  border-radius: 1rem 0px 0px 1rem;
+}
+
+#custom-lock {
+  color: @lavender;
+  border-radius: 0;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @red;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#custom-workspaces {
+  background-color: @surface0;
+  padding: 0.25rem 0.5rem;
+  margin: 5px 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: @mauve;
+  border-radius: 1rem;
+  font-size: 25px;
+}
+

@@ -1,0 +1,109 @@
+{
+    "custom/workspaces": {
+    	"exec": "$HOME/.config/waybar/modules/niri-workspaces.sh",
+    	"return-type": "json",
+    	"interval": 1,
+	"markup": "pango",
+    	"on-click": "~/.config/waybar/scripts/focus_window.sh"
+    },
+    "custom/window": {
+        "exec": "$HOME/.config/waybar/modules/niri-windowtitle.sh",
+        "interval": 1
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+    "clock": {
+        "timezone": "Europe/Paris",
+        "locale": "fr_FR.utf8",
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%A %e %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": " {usage}% ",
+        "on-click": "alacritty -e htop"
+    },
+    "memory": {
+        "format": " {}% ",
+        "on-click": "alacritty -e htop"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " ",
+        "format-ethernet": " ",
+        "format-disconnected": "",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+	"on-click": "nm-connection-editor"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        "format-full": " ",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ]
+    },
+    "wireplumber": {
+	"on-click": "pavucontrol",
+        "format": "{icon} {volume}%",
+	"format-disabled": "",
+        "format-muted": "{format_source}  ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "{format_source}",
+        "format-icons": {
+            "headphone": "",
+	    "muted": " ",
+            "default":[
+                "",
+		"",
+                " "
+            ]
+        }
+    },
+    "bluetooth": {
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+	"format-icons": ""
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [
+        "",
+	""
+        ]
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; swaylock)' & disown",
+        "format": ""
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": ""
+    }
+}

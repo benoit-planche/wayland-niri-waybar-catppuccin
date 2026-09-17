@@ -1,0 +1,42 @@
+{
+    "position": "top",
+    "layer": "top",
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "width": 0,
+    "height": 0,
+    "spacing": 0,
+
+    "include": ["~/.config/waybar/modules/niri-modules.jsonc"],
+
+    "modules-left": [
+        "custom/workspaces",
+	"custom/window"
+    ],
+
+    "modules-center": [
+	"custom/music"
+    ],
+
+    "modules-right": [
+	"group/hardware",
+        "backlight",
+        "wireplumber",
+        "battery",
+	"bluetooth",
+        "network",
+        "clock",
+	"custom/lock",
+	"custom/power"
+    ],
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory"
+        ]
+    }
+}
